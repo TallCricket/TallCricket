@@ -42,3 +42,55 @@
     <script src="script.js"></script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Cricket Scores - TallCricket</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Live Cricket Scores</h1>
+
+    <!-- Live Score Section -->
+    <section id="live-scores">
+        <div id="live-score-data">Loading live scores...</div>
+    </section>
+
+    <!-- JavaScript to fetch and display live scores -->
+    <script>
+        const apiKey = '97efbd7e-e145-496d-97d2-40e5f8a5099f';
+        const liveScoreUrl = `https://api.example.com/livescores?api_key=${apiKey}`;
+
+        async function fetchLiveScores() {
+            try {
+                const response = await fetch(liveScoreUrl);
+                if (!response.ok) throw new Error('Error fetching live scores');
+
+                const data = await response.json();
+                displayLiveScores(data);
+            } catch (error) {
+                document.getElementById('live-score-data').innerText = 'Failed to load live scores.';
+                console.error('Error:', error);
+            }
+        }
+
+        function displayLiveScores(data) {
+            let scoresHtml = '';
+            data.matches.forEach(match => {
+                scoresHtml += `
+                    <div class="match">
+                        <h3>${match.team1} vs ${match.team2}</h3>
+                        <p>Status: ${match.status}</p>
+                        <p>Score: ${match.score}</p>
+                    </div>
+                `;
+            });
+            document.getElementById('live-score-data').innerHTML = scoresHtml;
+        }
+
+        fetchLiveScores();
+    </script>
+</body>
+</html>
