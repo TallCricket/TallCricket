@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>News - TallCricket</title>
+</head>
+<body>
+    <header>
+        <h1>TallCricket</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="matches.html">Matches</a></li>
+                <li><a href="scores.html">Live Scores</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="rankings.html">Rankings</a></li>
+                <li><a href="stats.html">Stats</a></li>
+                <li><a href="teams.html">teams</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Latest News</h2>
+        <p>Stay updated with the latest news in the cricket world.</p>
+        <ul>
+            <li>India wins the T20 series against Australia.</li>
+            <li>England announces squad for upcoming World Cup.</li>
+            <li>Star players shine in the IPL 2024.</li>
+        </ul>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 TallCricket. All rights reserved.</p>
+    </footer>
+
+    <script src="config.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket News - TallCricket</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e9ecef; /* Light grey background */
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #0056b3; /* Dark blue */
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 4px solid #003366; /* Darker blue */
+        }
+        #search {
+            text-align: center;
+            margin: 20px 0;
+        }
+        #search input {
+            padding: 10px;
+            width: 300px;
+            font-size: 16px;
+            border: 2px solid #0056b3; /* Matching dark blue */
+            border-radius: 5px;
+        }
+        #news-articles {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            padding: 1rem;
+        }
+        .article-card {
+            background-color: #ffffff; /* White for article cards */
+            border: 2px solid #28a745; /* Green border */
+            border-radius: 8px;
+            padding: 1rem;
+            width: 250px;
+            text-align: center;
+            transition: transform 0.2s; /* Add some animation on hover */
+        }
+        .article-card:hover {
+            transform: scale(1.05); /* Slightly increase size on hover */
+        }
+        .article-card h2 {
+            color: #0056b3; /* Dark blue */
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        .article-card p {
+            font-size: 0.9rem;
+            color: #343a40; /* Dark grey for text */
+        }
+    </style>
+</head>
+<body>
+
+    
+    <!-- Search Bar -->
+    <section id="search">
+        <input type="text" id="newsSearch" placeholder="Search for news..." onkeyup="filterNews()">
+    </section>
+
+    <!-- News Articles Section -->
+    <section id="news-articles">
+        <div class="article-card" data-article="India Wins T20 World Cup">
+            <h2>India Wins T20 World Cup</h2>
+            <p>Date: November 15, 2024</p>
+            <p>India claimed the T20 World Cup title after defeating Australia in the finals.</p>
+        </div>
+        <div class="article-card" data-article="New Player in the Squad">
+            <h2>New Player in the Squad</h2>
+            <p>Date: November 12, 2024</p>
+            <p>Coach announces the inclusion of a promising new player in the national squad.</p>
+        </div>
+        <div class="article-card" data-article="Record Broken by Rohit Sharma">
+            <h2>Record Broken by Rohit Sharma</h2>
+            <p>Date: November 10, 2024</p>
+            <p>Rohit Sharma breaks the record for the highest runs in T20 matches.</p>
+        </div>
+        <div class="article-card" data-article="Australia's Comeback Victory">
+            <h2>Australia's Comeback Victory</h2>
+            <p>Date: November 9, 2024</p>
+            <p>Australia staged a remarkable comeback to win the ODI series against England.</p>
+        </div>
+        <div class="article-card" data-article="Cricketing Legends Honored">
+            <h2>Cricketing Legends Honored</h2>
+            <p>Date: November 5, 2024</p>
+            <p>Several cricket legends were honored at a special ceremony for their contributions.</p>
+        </div>
+        <!-- Add more articles as needed -->
+    </section>
+
+    <script>
+        function filterNews() {
+            // Get the search input value
+            const searchValue = document.getElementById('newsSearch').value.toLowerCase();
+            // Get all article cards
+            const articleCards = document.querySelectorAll('.article-card');
+            
+            // Loop through all article cards and filter based on search input
+            articleCards.forEach(card => {
+                const articleTitle = card.getAttribute('data-article').toLowerCase();
+                if (articleTitle.includes(searchValue)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
+

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TallCricket - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Section with Navigation -->
+    <header>
+        <div class="logo">TallCricket</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="matches.html">Matches</a></li>
+                <li><a href="scores.html">Live Scores</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="rankings.html">Rankings</a></li>
+                <li><a href="stats.html">Stats</a></li>
+                <li><a href="teams.html">teams</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cricket Rankings - TallCricket</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f8f9fa; /* Light grey background */
+                margin: 0;
+                padding: 0;
+            }
+            header {
+                background-color: #dc3545; /* Red */
+                color: white;
+                text-align: center;
+                padding: 20px 0;
+                border-bottom: 4px solid #bd2130; /* Darker red */
+            }
+            #search {
+                text-align: center;
+                margin: 20px 0;
+            }
+            #search input {
+                padding: 10px;
+                width: 300px;
+                font-size: 16px;
+                border: 2px solid #dc3545; /* Matching dark red */
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+            #rankings {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 1rem;
+            }
+            .ranking-section {
+                margin: 20px 0;
+                width: 100%;
+                max-width: 800px; /* Limit the width of ranking sections */
+            }
+            .team-card, .player-card {
+                background-color: #ffffff; /* White for cards */
+                border: 2px solid #28a745; /* Green border */
+                border-radius: 8px;
+                padding: 1rem;
+                margin: 10px;
+                text-align: center;
+                transition: transform 0.2s; /* Animation on hover */
+            }
+            .team-card:hover, .player-card:hover {
+                transform: scale(1.05); /* Slightly increase size on hover */
+            }
+            .team-card h2, .player-card h2 {
+                color: #dc3545; /* Dark red for titles */
+                margin-bottom: 0.5rem;
+                font-size: 1.2rem;
+            }
+            .team-card p, .player-card p {
+                font-size: 0.9rem;
+                color: #343a40; /* Dark grey for text */
+            }
+            .number {
+                font-weight: bold;
+                color: #dc3545; /* Dark red for numbering */
+                font-size: 1.5rem;
+                margin-right: 5px;
+            }
+        </style>
+    </head>
+    <body>
+    
+        
+        <!-- Rankings Section -->
+        <section id="rankings">
+    
+            <!-- ODI Rankings -->
+            <div class="ranking-section">
+                <h2>ODI Team Rankings</h2>
+                <input type="text" id="odiSearch" placeholder="Search for a team..." onkeyup="filterODITeams()">
+                <div id="odi-rankings">
+                    <div class="team-card" data-team="India">
+                        <span class="number">1.</span>
+                        <h2>India</h2>
+                        <p>Points: 220</p>
+                        <p>Matches: 15</p>
+                        <p>Wins: 10</p>
+                    </div>
+                    <div class="team-card" data-team="Australia">
+                        <span class="number">2.</span>
+                        <h2>Australia</h2>
+                        <p>Points: 215</p>
+                        <p>Matches: 15</p>
+                        <p>Wins: 9</p>
+                    </div>
+                    <div class="team-card" data-team="England">
+                        <span class="number">3.</span>
+                        <h2>England</h2>
+                        <p>Points: 200</p>
+                        <p>Matches: 15</p>
+                        <p>Wins: 8</p>
+                    </div>
+                    <!-- Add more ODI teams as needed -->
+                </div>
+            </div>
+    
+            <!-- Test Rankings -->
+            <div class="ranking-section">
+                <h2>Test Team Rankings</h2>
+                <input type="text" id="testSearch" placeholder="Search for a team..." onkeyup="filterTestTeams()">
+                <div id="test-rankings">
+                    <div class="team-card" data-team="India">
+                        <span class="number">1.</span>
+                        <h2>India</h2>
+                        <p>Points: 380</p>
+                        <p>Matches: 15</p>
+                        <p>Wins: 12</p>
+                    </div>
+                    <div class="team-card" data-team="Australia">
+                        <span class="number">2.</span>
+                        <h2>Australia</h2>
+                        <p>Points: 370</p>
+                        <p>Matches: 15</p>
+                        <p>Wins: 10</p>
+                    </div>
+                    <div class="team-card" data-team="England">
+                        <span class="number">3.</span>
+                        <h2>England</h2>
+                        <p>Points: 350</p>
+                        <p>Matches: 15</p>
+                        <p>Wins: 9</p>
+                    </div>
+                    <!-- Add more Test teams as needed -->
+                </div>
+            </div>
+    
+            <!-- T20 Rankings -->
+            <div class="ranking-section">
+                <h2>T20 Team Rankings</h2>
+                <input type="text" id="t20Search" placeholder="Search for a team..." onkeyup="filterT20Teams()">
+                <div id="t20-rankings">
+                    <div class="team-card" data-team="India">
+                        <span class="number">1.</span>
+                        <h2>India</h2>
+                        <p>Points: 270</p>
+                        <p>Matches: 15</p>
+                        <p>Wins: 12</p>
+                    </div>
+                    <div class="team-card" data-team="England">
+                        <span class="number">2.</span>
+                        <h2>England</h2>
+                        <p>Points: 260</p>
+                        <p>Matches: 15</p>
+                        <p>Wins: 11</p>
+                    </div>
+                    <div class="team-card" data-team="New Zealand">
+                        <span class="number">3.</span>
+                        <h2>New Zealand</h2>
+                        <p>Points: 250</p>
+                        <p>Matches: 15</p>
+                        <p>Wins: 10</p>
+                    </div>
+                    <!-- Add more T20 teams as needed -->
+                </div>
+            </div>
+    
+            <!-- Player Rankings -->
+            <div class="ranking-section">
+                <h2>Top Players Rankings</h2>
+                <input type="text" id="playerSearch" placeholder="Search for a player..." onkeyup="filterPlayers()">
+                <div id="player-rankings">
+                    <div class="player-card" data-player="Virat Kohli">
+                        <span class="number">1.</span>
+                        <h2>Virat Kohli</h2>
+                        <p>Ranking: 1</p>
+                        <p>Points: 850</p>
+                    </div>
+                    <div class="player-card" data-player="Steve Smith">
+                        <span class="number">2.</span>
+                        <h2>Steve Smith</h2>
+                        <p>Ranking: 2</p>
+                        <p>Points: 830</p>
+                    </div>
+                    <div class="player-card" data-player="Babar Azam">
+                        <span class="number">3.</span>
+                        <h2>Babar Azam</h2>
+                        <p>Ranking: 3</p>
+                        <p>Points: 820</p>
+                    </div>
+                    <!-- Add more players as needed -->
+                </div>
+            </div>
+    
+        </section>
+    
+        <script>
+            // Function to filter ODI team rankings
+            function filterODITeams() {
+                const searchValue = document.getElementById('odiSearch').value.toLowerCase();
+                const teamCards = document.querySelectorAll('#odi-rankings .team-card');
+                teamCards.forEach((card) => {
+                    const teamName = card.getAttribute('data-team').toLowerCase();
+                    if (teamName.includes(searchValue)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+    
+            // Function to filter Test team rankings
+            function filterTestTeams() {
+                const searchValue = document.getElementById('testSearch').value.toLowerCase();
+                const teamCards = document.querySelectorAll('#test-rankings .team-card');
+                teamCards.forEach((card) => {
+                    const teamName = card.getAttribute('data-team').toLowerCase();
+                    if (teamName.includes(searchValue)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+    
+            // Function to filter T20 team rankings
+            function filterT20Teams() {
+                const searchValue = document.getElementById('t20Search').value.toLowerCase();
+                const teamCards = document.querySelectorAll('#t20-rankings .team-card');
+                teamCards.forEach((card) => {
+                    const teamName = card.getAttribute('data-team').toLowerCase();
+                    if (teamName.includes(searchValue)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+    
+            // Function to filter player rankings
+            function filterPlayers() {
+                const searchValue = document.getElementById('playerSearch').value.toLowerCase();
+                const playerCards = document.querySelectorAll('#player-rankings .player-card');
+                playerCards.forEach((card) => {
+                    const playerName = card.getAttribute('data-player').toLowerCase();
+                    if (playerName.includes(searchValue)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+        </script>
+    </body>
+    </html>
+    

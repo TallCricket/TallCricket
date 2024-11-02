@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TallCricket - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Section with Navigation -->
+    <header>
+        <div class="logo">TallCricket</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="matches.html">Matches</a></li>
+                <li><a href="scores.html">Live Scores</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="rankings.html">Rankings</a></li>
+                <li><a href="stats.html">Stats</a></li>
+                <li><a href="teams.html">teams</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Search Bar -->
+    <section id="search">
+        <input type="text" id="teamSearch" placeholder="Search for a team..." onkeyup="filterTeams()">
+    </section>
+
+     <!-- Teams Section -->
+     <section id="teams">
+        <div class="team-card">
+            <h2>India</h2>
+            <p>Top players: Virat Kohli, Rohit Sharma, Jasprit Bumrah</p>
+        </div>
+        <div class="team-card">
+            <h2>Australia</h2>
+            <p>Top players: Steve Smith, David Warner, Pat Cummins</p>
+        </div>
+        <div class="team-card">
+            <h2>England</h2>
+            <p>Top players: Joe Root, Ben Stokes, Jofra Archer</p>
+        </div>
+        <div class="team-card">
+            <h2>South Africa</h2>
+            <p>Top players: Quinton de Kock, Kagiso Rabada, Aiden Markram</p>
+        </div>
+        <div class="team-card">
+            <h2>New Zealand</h2>
+            <p>Top players: Kane Williamson, Trent Boult, Tim Southee</p>
+        </div>
+        <div class="team-card">
+            <h2>Pakistan</h2>
+            <p>Top players: Babar Azam, Shaheen Afridi, Mohammad Rizwan</p>
+        </div>
+        <div class="team-card">
+            <h2>West Indies</h2>
+            <p>Top players: Chris Gayle, Jason Holder, Kieron Pollard</p>
+        </div>
+        <div class="team-card">
+            <h2>Bangladesh</h2>
+            <p>Top players: Shakib Al Hasan, Tamim Iqbal, Mushfiqur Rahim</p>
+        </div>
+        <div class="team-card">
+            <h2>Sri Lanka</h2>
+            <p>Top players: Angelo Mathews, Lasith Malinga, Kusal Perera</p>
+        </div>
+        <div class="team-card">
+            <h2>Afghanistan</h2>
+            <p>Top players: Rashid Khan, Mohammad Nabi, Mujeeb Ur Rahman</p>
+        </div>
+        <div class="team-card">
+            <h2>Zimbabwe</h2>
+            <p>Top players: Sean Williams, Sikandar Raza, Brendan Taylor</p>
+        </div>
+        <div class="team-card">
+            <h2>Ireland</h2>
+            <p>Top players: Paul Stirling, Kevin O'Brien, Andrew Balbirnie</p>
+        </div>
+        <div class="team-card">
+            <h2>Netherlands</h2>
+            <p>Top players: Pieter Seelaar, Max O'Dowd, Ben Cooper</p>
+        </div>
+        <div class="team-card">
+            <h2>Scotland</h2>
+            <p>Top players: Kyle Coetzer, Richie Berrington, Calum MacLeod</p>
+        </div>
+        <div class="team-card">
+            <h2>United Arab Emirates</h2>
+            <p>Top players: Chirag Suri, Rohan Mustafa, Muhammad Usman</p>
+        </div>
+        <div class="team-card">
+            <h2>Oman</h2>
+            <p>Top players: Zeeshan Maqsood, Aqib Ilyas, Khawar Ali</p>
+        </div>
+        <div class="team-card">
+            <h2>Namibia</h2>
+            <p>Top players: Gerhard Erasmus, David Wiese, JJ Smit</p>
+        </div>
+        <div class="team-card">
+            <h2>USA</h2>
+            <p>Top players: Steven Taylor, Ali Khan, Saurabh Netravalkar</p>
+        </div>
+        <div class="team-card">
+            <h2>Hong Kong</h2>
+            <p>Top players: Anshuman Rath, Babar Hayat, Kinchit Shah</p>
+        </div>
+    </section>
+
+    <script>
+        function filterTeams() {
+            // Get the search input value
+            const searchValue = document.getElementById('teamSearch').value.toLowerCase();
+            // Get all team cards
+            const teamCards = document.querySelectorAll('.team-card');
+            
+            // Loop through all team cards and filter based on search input
+            teamCards.forEach(card => {
+                const teamName = card.getAttribute('data-team').toLowerCase();
+                if (teamName.includes(searchValue)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+    </body>
+    </html>
+
+
+    <footer>
+        <p>&copy; 2024 TallCricket. All rights reserved.</p>
+    </footer>
+
+    <script src="config.js"></script>
+</body>
+</html>

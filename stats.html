@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TallCricket - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Section with Navigation -->
+    <header>
+        <div class="logo">TallCricket</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="matches.html">Matches</a></li>
+                <li><a href="scores.html">Live Scores</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="rankings.html">Rankings</a></li>
+                <li><a href="stats.html">Stats</a></li>
+                <li><a href="teams.html">teams</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #0033a0;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        #search {
+            text-align: center;
+            margin: 20px 0;
+        }
+        #search input {
+            padding: 10px;
+            width: 300px;
+            font-size: 16px;
+            border: 1px solid #0033a0;
+            border-radius: 5px;
+        }
+        #players {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            padding: 1rem;
+        }
+        .player-card {
+            background-color: #ffffff;
+            border: 1px solid #0033a0;
+            border-radius: 8px;
+            padding: 1rem;
+            width: 250px;
+            text-align: center;
+        }
+        .player-card h2 {
+            color: #0033a0;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+   
+
+    <!-- Search Bar -->
+    <section id="search">
+        <input type="text" id="playerSearch" placeholder="Search for a player..." onkeyup="filterPlayers()">
+    </section>
+
+    <!-- Players Section -->
+    <section id="players">
+        <div class="player-card" data-player="Virat Kohli">
+            <h2>Virat Kohli</h2>
+            <p>Matches: 95</p>
+            <p>Runs: 7547</p>
+            <p>Average: 52.06</p>
+        </div>
+        <div class="player-card" data-player="Rohit Sharma">
+            <h2>Rohit Sharma</h2>
+            <p>Matches: 56</p>
+            <p>Runs: 3043</p>
+            <p>Average: 48.89</p>
+        </div>
+        <div class="player-card" data-player="Steve Smith">
+            <h2>Steve Smith</h2>
+            <p>Matches: 86</p>
+            <p>Runs: 4386</p>
+            <p>Average: 62.84</p>
+        </div>
+        <div class="player-card" data-player="Ben Stokes">
+            <h2>Ben Stokes</h2>
+            <p>Matches: 60</p>
+            <p>Runs: 2580</p>
+            <p>Average: 38.70</p>
+        </div>
+        <div class="player-card" data-player="Kane Williamson">
+            <h2>Kane Williamson</h2>
+            <p>Matches: 92</p>
+            <p>Runs: 6476</p>
+            <p>Average: 52.05</p>
+        </div>
+        <div class="player-card" data-player="Babar Azam">
+            <h2>Babar Azam</h2>
+            <p>Matches: 51</p>
+            <p>Runs: 2720</p>
+            <p>Average: 56.53</p>
+        </div>
+        <div class="player-card" data-player="Jasprit Bumrah">
+            <h2>Jasprit Bumrah</h2>
+            <p>Matches: 64</p>
+            <p>Wickets: 103</p>
+            <p>Average: 24.69</p>
+        </div>
+        <div class="player-card" data-player="Pat Cummins">
+            <h2>Pat Cummins</h2>
+            <p>Matches: 57</p>
+            <p>Wickets: 105</p>
+            <p>Average: 28.37</p>
+        </div>
+        <!-- Add more players as needed -->
+    </section>
+
+    <script>
+        function filterPlayers() {
+            // Get the search input value
+            const searchValue = document.getElementById('playerSearch').value.toLowerCase();
+            // Get all player cards
+            const playerCards = document.querySelectorAll('.player-card');
+            
+            // Loop through all player cards and filter based on search input
+            playerCards.forEach(card => {
+                const playerName = card.getAttribute('data-player').toLowerCase();
+                if (playerName.includes(searchValue)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

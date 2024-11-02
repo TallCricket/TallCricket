@@ -1,0 +1,96 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+}
+
+/* Header styling */
+header {
+  background-color: #0033a0; /* Blue theme */
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Navigation bar */
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 1.5rem;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Main content */
+main {
+  padding: 2rem;
+  text-align: center;
+}
+/* Team Cards */
+#teams {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.team-card {
+  background-color: #e8f4fa;
+  border: 1px solid #0033a0;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 200px;
+  text-align: center;
+}
+
+.team-card h2 {
+  color: #0033a0;
+  margin-bottom: 0.5rem;
+}
+/* Match Cards */
+#upcoming-matches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.match-card {
+  background-color: #f0f8ff;
+  border: 1px solid #0033a0;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 250px;
+  text-align: center;
+}
+
+.match-card h2 {
+  color: #0033a0;
+  margin-bottom: 0.5rem;
+}

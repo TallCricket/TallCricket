@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TallCricket - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Section with Navigation -->
+    <header>
+        <div class="logo">TallCricket</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="matches.html">Matches</a></li>
+                <li><a href="scores.html">Live Scores</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="rankings.html">Rankings</a></li>
+                <li><a href="stats.html">Stats</a></li>
+                <li><a href="teams.html">teams</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Upcoming Matches - TallCricket</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f8f9fa;
+                margin: 0;
+                padding: 0;
+            }
+            header {
+                background-color: #0033a0;
+                color: white;
+                text-align: center;
+                padding: 20px 0;
+            }
+            #search {
+                text-align: center;
+                margin: 20px 0;
+            }
+            #search input {
+                padding: 10px;
+                width: 300px;
+                font-size: 16px;
+                border: 1px solid #0033a0;
+                border-radius: 5px;
+            }
+            #upcoming-matches {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1.5rem;
+                justify-content: center;
+                padding: 1rem;
+            }
+            .match-card {
+                background-color: #ffffff;
+                border: 1px solid #0033a0;
+                border-radius: 8px;
+                padding: 1rem;
+                width: 250px;
+                text-align: center;
+            }
+            .match-card h2 {
+                color: #0033a0;
+                margin-bottom: 0.5rem;
+            }
+        </style>
+    </head>
+    <body>
+    
+        
+    
+        <!-- Search Bar -->
+        <section id="search">
+            <input type="text" id="matchSearch" placeholder="Search for a match..." onkeyup="filterMatches()">
+        </section>
+    
+        <!-- Matches Section -->
+        <section id="upcoming-matches">
+            <div class="match-card" data-match="India vs Australia">
+                <h2>India vs Australia</h2>
+                <p>Date: November 10, 2024</p>
+                <p>Venue: Melbourne Cricket Ground, Australia</p>
+                <p>Series: T20 Series</p>
+            </div>
+            <div class="match-card" data-match="England vs New Zealand">
+                <h2>England vs New Zealand</h2>
+                <p>Date: November 12, 2024</p>
+                <p>Venue: Lord's, England</p>
+                <p>Series: ODI Series</p>
+            </div>
+            <div class="match-card" data-match="South Africa vs Pakistan">
+                <h2>South Africa vs Pakistan</h2>
+                <p>Date: November 15, 2024</p>
+                <p>Venue: New Wanderers Stadium, South Africa</p>
+                <p>Series: Test Series</p>
+            </div>
+            <div class="match-card" data-match="Sri Lanka vs Bangladesh">
+                <h2>Sri Lanka vs Bangladesh</h2>
+                <p>Date: November 20, 2024</p>
+                <p>Venue: R. Premadasa Stadium, Sri Lanka</p>
+                <p>Series: T20 Series</p>
+            </div>
+            <div class="match-card" data-match="West Indies vs Afghanistan">
+                <h2>West Indies vs Afghanistan</h2>
+                <p>Date: November 25, 2024</p>
+                <p>Venue: Kensington Oval, Barbados</p>
+                <p>Series: ODI Series</p>
+            </div>
+            <!-- Add more matches as needed -->
+        </section>
+    
+        <script>
+            function filterMatches() {
+                // Get the search input value
+                const searchValue = document.getElementById('matchSearch').value.toLowerCase();
+                // Get all match cards
+                const matchCards = document.querySelectorAll('.match-card');
+                
+                // Loop through all match cards and filter based on search input
+                matchCards.forEach(card => {
+                    const matchDetails = card.getAttribute('data-match').toLowerCase();
+                    if (matchDetails.includes(searchValue)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+        </script>
+    
+    </body>
+    </html>
+    
+
+    
+
+   
